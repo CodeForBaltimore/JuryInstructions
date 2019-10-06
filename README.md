@@ -10,6 +10,7 @@ For more information about this project and how we're building it please see the
 ## Setup
 To run this locally the following software is required:
 *  [NodeJs](https://nodejs.org/en/)
+*  [Docker](https://docker.com) *optional*
 
 If on a Mac you can install Node and npm via Homebrew with `brew install node`
 
@@ -48,7 +49,7 @@ When a local node instance is running you will see a message on your terminal wi
 As indicated above in the *Setup* section: for Docker any code change will require a re-build of the container. Local node instances reload dynamically so you do not need to restart the app unless you make changes to a template.
 
 ## Testing
-To run unit tests simply run this command from the project root:
+To run unit tests simply run this command from the project root while the server is running:
 ```
 npm test --coverage
 ```
