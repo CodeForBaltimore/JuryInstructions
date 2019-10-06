@@ -1,0 +1,17 @@
+{% extends "instructions.njk" %}
+
+{% block body %}
+<form action="/third" method="post" name="InstructionsSelection">
+    <input type="hidden" name="fname" value="{{ fname }}" />
+    <input type="hidden" name="lname" value="{{ lname }}" />
+    <input type="hidden" name="offensedate" value="{{ offensedate }}" />
+{% if homicide %}
+    <input type="hidden" name="homicide" value="true" />
+    {% block homicide %}
+        <h3>Homicide</h3>
+    {% endblock %}
+{% endif %}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "instructions.njk" %}
+
+{% block body %}
+{% if homicide %}
+    <input type="hidden" name="homicide" value="true" />
+    {% block homicide %}
+        <h3>Homicide</h3>
+    {% endblock %}
+{% endif %}
+{% endblock %}
