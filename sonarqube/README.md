@@ -17,8 +17,10 @@ You will need `sonar-scanner` running locally. To do that follow the directions 
 
 Once your local SonarQube instance is running and `sonar-scanner` is installed you can analyze this project from the project root by simply running:
 ```sh
-sonar-scanner
+sonar-scanner -Dsonar.projectKey=JuryInstructions
 ```
+
+Further configuration of the project to exclude contributed `node_modules` will be required through the UI.
 
 ## Reference
 For more information visit the [Docker Hub](https://hub.docker.com/_/sonarqube) project page.

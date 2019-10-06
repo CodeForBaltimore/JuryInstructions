@@ -28,6 +28,4 @@ app.post('/third', function(req, res) {
   Third.run(req,res);
 })
  
-app.listen(4000, function () {
-  console.log('App listening on port 4000!');
-});
+module.exports = app;
