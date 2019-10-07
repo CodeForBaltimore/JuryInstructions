@@ -2,24 +2,36 @@
   "name": "juryinstructions",
   "version": "1.0.0",
   "description": "This is a project to assist judges/practitioners fill out criminal pattern jury instructions.",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "app": "app"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "nodemon": "^1.19.3",
     "nunjucks": "^3.2.0",
-    "vue": "^2.6.10"
+    "superagent": "^5.1.0",
+    "supertest": "^4.0.2",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start": "nodemon --inspect=127.0.0.1:4000 app/server.js"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter",
+    "collectCoverage": true
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CodeForBaltimore/JuryInstructions.git"
   },
-  "author": "",
+  "author": "Code for Baltimore",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CodeForBaltimore/JuryInstructions/issues"

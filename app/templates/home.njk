@@ -3,11 +3,11 @@
 <body>
 
 
-<form  method="post" name="InstructionsSelection">
+<form action="/second" method="post" name="InstructionsSelection">
 	<h1>Enter Defendant's details:</h1>
 	<div class="form-group">
 		<label> Date of record entry: </label>
-		<input type="date" name="offensedate">
+		<input type="date" name="todaydate">
 	</div>
 	<br style=“line-height:2;”>
 	<div class="form-group">
@@ -31,8 +31,8 @@
   
   <h1>Type of Instructions:</h1>
 	<div class="form-group">
-		<input type="checkbox" name="instruction_set1" value="Homicide"> Homicide<br>
-		<input type="checkbox" name="instruction_set2" value="Assault"> First degree Assault
+		<input type="checkbox" name="homicide" value="true"> Homicide<br>
+		<input type="checkbox" name="first_degree_assult" value="true"> First degree Assault
 	</div>
 	<br>
   <input type="submit" value="Submit">

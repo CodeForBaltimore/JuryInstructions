@@ -57,6 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# sonarqube
+sonarqube/
+
 .DS_Store
 .scannerwork/
 test-report.xml
