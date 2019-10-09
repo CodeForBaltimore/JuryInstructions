@@ -1,8 +1,8 @@
 {% extends "instructions.njk" %}
 
 {% block body %}
+<textarea id="content" cols="60" rows="50">
 {% if homicide %}
-    <input type="hidden" name="homicide" value="true" />
     {% block homicide %}
         <h2>MPJI-Cr 4:17.1 HOMICIDE--FIRST DEGREE PREMEDITATED MURDER AND SECOND DEGREE SPECIFIC INTENT MURDER (VOLUNTARY INTOXICATION GENERATED AND SECOND DEGREE DEPRAVED HEART MURDER AND INVOLUNTARY MANSLAUGHTER INSTRUCTED), BUT NO JUSTIFICATION OR MITIGATION GENERATED</h2>
         <p>The defendant {{ fname }} {{ lname }} is charged with the crime of murder. This charge includes first degree murder and second degree murder.</p>
@@ -50,13 +50,21 @@
         <p>[If defendant was unaware of the risk due to self-induced intoxication, that unawareness is not a defense.]</p>
         ​
         <h3>Notes on Use</h3>
-        <p>Use this instruction if the defendant is charged with first degree premeditated murder under MD. CODE ANN., CRIMINAL LAW I § 2-201 (2012 &amp Supp. 2018) (hereinafter CRIM. LAW I or II § ___ ), and/or second degree specific intent murder under CRIM. LAW I § 2-204, but only if (1) there is evidence of voluntary intoxication, and (2) there is no issue of justification or mitigation generated. If, in addition to murder, the defendant is charged with other specific intent crimes, use this instruction in conjunction with MPJI-Cr 5:08 (Voluntary Intoxication) and modify, as necessary, to enable the two instructions to work together.</p>
+        <p>Use this instruction if the defendant is charged with first degree premeditated murder under MD. CODE ANN., CRIMINAL LAW I § 2-201 (2012 &amp Supp. 2018) (hereinafter CRIM. LAW I or II § ___ ), and/or second degree specific intent murder under CRIM. LAW I § 2-204, but only if (1) there is evidence of voluntary intoxication, and (2) there is no issue of justification or mitigation generated. If, in addition to murder, the defendant is charged with other specific intent crimes, use this instruction in conjunction with MPJI-Cr 5:08 (Voluntary Intoxication) and modify, as necessary, to enable the two instructions to work together.</p> 
     {% endblock %}
 {% endif %}
+
 {% if firstDegreeAssult %}
-    <input type="hidden" name="first_degree_assult" value="true" />
     {% block firstDegreeAssult %}
         <h3>First Degree Assult</h3>
     {% endblock %}
 {% endif %}
+</textarea>
+
+<div id="elementH"></div>
+<button onclick="Export2Docx('content', '{{ fname }}-{{ lname }}-jury-instructions');">Export as .docx</button>
+<button onclick="Export2Pdf('content', '{{ fname }}-{{ lname }}-jury-instructions');">Export as .pdf</button>
+<script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+<script src="/public/js/main.js"></script>
 {% endblock %}
