@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 var nunjucks = require('nunjucks');
+var path = require('path');
 var app = express();
 var Home = require('./controllers/Home');
 var Second = require('./controllers/Second');
@@ -8,6 +9,7 @@ var Third = require('./controllers/Third');
 
 app.set('views', __dirname + '/templates');
 app.set('view engine', 'njk');
+app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
