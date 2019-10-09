@@ -1,0 +1,12 @@
+Variable explanation for Jury Instructions
+By Way of explaining FIRST_DEGREE_ASSULT.md (FDA)
+
+Generally, square brackets -- [ ] -- signify variables.
+
+1. When a square bracket is by itself, it signifies optional language. For example, on line 2 of the FDA instruction, the text that reads: "The defendant is [also] charged..." means that the final instruction can read "The defendant is also charged..." OR "The defendant is charged..."
+
+2. When there are series of square brackets, it signifies alternatives. For example, on line 5 for the FDA instruction, the text that reads: "A firearm is a weapon that propels [a bullet] [shotgun pellets] [a missile] [a projectile] by gunpowder or a similar explosive." means that the final instruction can read "A firearm is a weapon that propels a bullet by gunpowder or a similar explosive" OR "A firearm is a weapon that propels shotgun pellets by gunpowder or a similar explosive" OR "A firearm is a weapon that propels a missile by gunpowder or a similar explosive" OR "A firearm is a weapon that propels a projectile by gunpowder or a similar explosive".
+
+2 (2d example). This same kind of square bracket variables can be see on line 8. It reads - "(2) causes serious and permanent or serious and protracted [disfigurement] ["loss or impairment of the function of any bodily member or organ"]." So that means EITHER "disfigurement" or "loss or impairment of the function of any bodily member or organ".
+
+** NOTE: The instruction ENDS on LINE 9. When you see NOTES ON USE or COMMENT - that is extra information that is NOT part of the instruction itself
