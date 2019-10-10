@@ -4,7 +4,7 @@ var model = new BaseModel();
 module.exports = model.extend({
     name: "Third",
     setHomicide: function(hvalues) {
-        values = {
+        var values = {
             dfname: hvalues.dfname,
             dlname: hvalues.dlname,
             substances: [
