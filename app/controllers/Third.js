@@ -20,7 +20,13 @@ module.exports = BaseController.extend({
             date: req.body.todaydate,
             offensedate: req.body.offensedate,
             homicide: req.body.homicide,
-            firstDegreeAssult: req.body.first_degree_assult
+            firstDegreeAssult: req.body.first_degree_assult,
+            dfname: req.body.dfname,
+            dlname: req.body.dlname,
+            substances: [
+                req.body.alcohol,
+                req.body.drugs
+            ]
         };
     }
 });
