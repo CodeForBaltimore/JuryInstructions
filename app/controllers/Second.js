@@ -1,26 +1,14 @@
 var BaseController = require("./Base");
 var View = require("../views/Base");
+var model = new (require("../models/Second"));
 
 module.exports = BaseController.extend({ 
 	name: "Second",
-	content: null,
-	run: function(req, res) {
-        var self = this;
-
+	run: function(req, res) { 
+        model.setValues(req.body);
         var template = 'second';
-        var values = self.getSecond(req);
         
-        var v = new View(res, template);
-        v.render(values);
-    },
-    getSecond: function(req) {
-        return {
-            fname: req.body.fname,
-            lname: req.body.lname,
-            date: req.body.todaydate,
-            offensedate: req.body.offensedate,
-            homicide: req.body.homicide,
-            firstDegreeAssult: req.body.first_degree_assult
-        };
+        var v = new View(res, template); 
+        v.render(model.values);
     }
 });
