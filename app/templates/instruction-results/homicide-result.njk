@@ -20,7 +20,8 @@
     <li>that the defendant caused the death of {{ dfname | upper }} {{ dlname | upper }}; and</li>
     <li>that the defendant engaged in the deadly conduct either with the intent to kill or with the intent to inflict such serious bodily harm that death would be the likely result.</li>
 </ol>
-{% if substances %}
+{% set substances = [alcohol,drugs] %}
+{% if (alcohol) or (drugs) %}
 <h1>C</h1>
 <h2>VOLUNTARY INTOXICATION</h2>
 <p>You have heard evidence that the defendant acted while intoxicated by{% for substance in substances %} {{ substance }}{% endfor %}. You must now consider {% if sex == "male" %}his{% else %}her{% endif %} mental state at the time of the act that caused the death. Generally, voluntary intoxication is not a defense and does not excuse or justify criminal conduct. However, when charged with an offense requiring a specific intent, the defendant cannot be guilty if {% if sex == "male" %}he{% else %}she{% endif %} was so intoxicated at the time of the act that {% if sex == "male" %}he{% else %}she{% endif %} was unable to form the necessary specific intent. A specific intent is a state of mind in which the defendant intends that {% if sex == "male" %}his{% else %}her{% endif %} act will cause a specific result. In this case, the defendant is charged with [one] [two] [three] specific intent [variety] [varieties] of the murder of {{ dfname | upper }} {{ dlname | upper }}, as follows: [first degree premeditated specific intent to kill murder] [second degree non-premeditated specific intent to kill murder], and [second degree specific intent to inflict serious bodily harm murder].</p>
