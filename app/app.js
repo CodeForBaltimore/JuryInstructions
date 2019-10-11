@@ -20,18 +20,20 @@ nunjucks.configure([
 });
 
 app.get('/', function (req, res) {
-  var v = new View(res, 'home');
-  v.render();
+  deliver(req, res, 'home');
 });
 
 app.post('/second', function (req, res) {
-  var v = new View(res, 'second');
-  v.render(req.body);
+  deliver(req, res, 'second');
 });
 
 app.post('/third', function (req, res) {
-  var v = new View(res, 'third');
-  v.render(req.body);
+  deliver(req, res, 'third');
 })
+
+function deliver(req, res, template) {
+  var v = new View(res, template);
+  v.render(req.body);
+}
 
 module.exports = app;
