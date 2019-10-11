@@ -1,6 +1,6 @@
 {
   "name": "juryinstructions",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "This is a project to assist judges/practitioners fill out criminal pattern jury instructions.",
   "main": "app/server.js",
   "directories": {

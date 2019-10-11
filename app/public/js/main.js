@@ -1,4 +1,5 @@
-tinymce.init({
+if(typeof tinymce !== 'undefined'){
+    tinymce.init({
     selector: '#content',
     plugins: [
         "advlist autolink lists link image charmap print preview anchor",
@@ -8,10 +9,11 @@ tinymce.init({
     toolbar: "insertfile undo redo | styleselect | bold italic | " +
         "alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | " +
         "link image"
-});
+    });
+}
 
 function Export2Docx(element, filename = '') {
-    var content = sanitizeContent(element);
+    var content = sanitizeContent(tinyMCE.get(element).getContent());
 
     var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
     var postHtml = "</body></html>";
@@ -25,13 +27,7 @@ function Export2Docx(element, filename = '') {
     var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
 
     // Specify file name
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
-
-    filename = filename ? filename + '-' + today + '.docx' : 'document.docx';
+    filename = filename ? filename + '-' + getDate + '.docx' : 'document.docx';
 
     // Create download link element
     var downloadLink = document.createElement("a");
@@ -63,23 +59,26 @@ function Export2Pdf(element, filename = '') {
             return true;
         }
     };
-    doc.fromHTML(content, 15, 15, {
+    doc.fromHTML(content, 15, 15, { 
         'width': 170,
         'elementHandlers': specialElementHandlers
     });
 
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-    today = mm + '/' + dd + '/' + yyyy;
-
-    doc.save(filename + '-' + today + '.pdf');
+    doc.save(filename + '-' + getDate() + '.pdf');
 }
 
-function sanitizeContent(element) {
-    var content = tinyMCE.get(element).getContent();
+function sanitizeContent(content) {
     content = content.replace(/<!DOCTYPE html>|<html>|<head>|<\/head>|<body>|<\/body>|<\/html>/gi, "").trim();
 
     return content;
 }
+
+function getDate() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    return mm + '/' + dd + '/' + yyyy;
+}
+
+module.exports = {sanitizeContent, getDate};

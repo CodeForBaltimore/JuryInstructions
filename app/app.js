@@ -20,7 +20,7 @@ nunjucks.configure([
 });
 
 app.get('/', function (req, res) {
-  deliver(req, res, 'home');
+  deliver(req, res, 'home'); 
 });
 
 app.post('/second', function (req, res) {
