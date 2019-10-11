@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/CodeForBaltimore/JuryInstructions.svg?branch=master)](https://travis-ci.com/CodeForBaltimore/JuryInstructions)
 # Jury Instructions
 This is a project to assist judges/practitioners fill out criminal pattern jury instructions.
 
