@@ -11,7 +11,10 @@ app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-nunjucks.configure(['app/templates', 'app/templates/instruction-forms', 'app/templates/instruction-results'], {
+nunjucks.configure([
+  'app/templates', 
+  'app/templates/instruction-forms', 
+  'app/templates/instruction-results'], {
   autoescape: true,
   express: app
 });
