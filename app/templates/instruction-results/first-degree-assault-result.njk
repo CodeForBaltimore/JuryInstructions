@@ -5,10 +5,10 @@
 	<li>the defendant used a firearm to commit assault on {{ dfname | upper }} {{ dlname | upper }}; or</li>
 	<li>the defendant intended to cause serious physical injury to {{ dfname | upper }} {{ dlname | upper }} in the commission of the assault.</li>
 </ol>
-{% if (Firearm)%}
+{% if (bullet) or(shotgun) or (missile) or (projectile)%}
 <p>A firearm is a weapon that propels [a bullet] [shotgun pellets] [a missile] [a projectile] by gunpowder or a similar explosive.</p>
 {% endif %}
-{% if (Injury)%}
+{% if (injury)%}
 <p>Serious physical injury means injury that</p>
 <ol>
 	<li>creates a substantial risk of death; or,</li>

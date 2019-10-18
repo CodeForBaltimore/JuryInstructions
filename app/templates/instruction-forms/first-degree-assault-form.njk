@@ -1,15 +1,19 @@
 <input type="hidden" name="first_degree_assult" value="true" />
 <h1>FIRST DEGREE ASSAULT</h1>
 <div class="form-group">
-	<label> Deceased First name: <label>
+	<label> Victim's First name: <label>
 	<input type="text" name="dfname">
 </div>
 <div class="form-group">
-	<label> Deceased Last name: <label>
+	<label> Victim's Last name: <label>
 	<input type="text" name="dlname">
 </div>
 <div class="form-group">
     <label>Assault executed by?</label><br>
-	<input type="checkbox" name="Firearm" value="drugs"> Use of Firearm<br>
-	<input type="checkbox" name="Injury" value="alcohol"> Causing physical injury
+	<div class="form-group">
+		<input type="checkbox" name="bullet" value="firearm"> a bullet<br>
+		<input type="checkbox" name="shotgun" value="firearm"> shotgun pellets <br>
+		<input type="checkbox" name="missile" value="firearm"> a missile<br>
+		<input type="checkbox" name="projectile" value="firearm"> a projectile <br>
+		<input type="checkbox" name="injury" value="injury"> injury <br>
 </div>
