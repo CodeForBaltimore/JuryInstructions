@@ -6,6 +6,14 @@
     <input type="hidden" name="lname" value="{{ lname }}" />
     <input type="hidden" name="sex" value="{{ sex }}" />
     <input type="hidden" name="offensedate" value="{{ offensedate }}" />
+    <div class="form-group">
+        <label> Victim First name: <label>
+        <input type="text" name="vfname">
+    </div>
+    <div class="form-group">
+        <label> Victim Last name: <label>
+        <input type="text" name="vlname">
+    </div>
 {% if homicide %}
     {% block homicide %}
         {% include "homicide-form.njk" %}
