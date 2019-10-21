@@ -5,11 +5,11 @@
 <h2>FIRST DEGREE MURDER</h2>
 <p>First degree murder is the intentional killing of another person with willfulness, deliberation, and premeditation. In order to convict the defendant of first degree murder, the State must prove:</p>
 <ol>
-    <li>that the defendant caused the death of {{ dfname | upper }} {{ dlname | upper }}; and</li>
+    <li>that the defendant caused the death of {{ vfname | upper }} {{ vlname | upper }}; and</li>
     <li>that the killing was willful, deliberate, and premeditated.</li>
 </ol>
 <ul>
-    <li>Willful means that the defendant actually intended to kill {{ dfname | upper }} {{ dlname | upper }}.</li>
+    <li>Willful means that the defendant actually intended to kill {{ vfname | upper }} {{ vlname | upper }}.</li>
     <li>Deliberate means that the defendant was conscious of the intent to kill.</li>
     <li>Premeditated means that the defendant thought about the killing and that there was enough time before the killing, though it may only have been brief, for the defendant to consider the decision whether or not to kill and enough time to weigh the reasons for and against the choice. The premeditated intent to kill must be formed before the killing.</li>
 </ul>
@@ -17,23 +17,23 @@
 <h2>SECOND DEGREE MURDER</h2>
 <p>Second degree murder is the killing of another person with either the intent to kill or the intent to inflict such serious bodily harm that death would be the likely result. Second degree murder does not require premeditation or deliberation. In order to convict the defendant of second degree murder, the State must prove:</p>
 <ol>
-    <li>that the defendant caused the death of {{ dfname | upper }} {{ dlname | upper }}; and</li>
+    <li>that the defendant caused the death of {{ vfname | upper }} {{ vlname | upper }}; and</li>
     <li>that the defendant engaged in the deadly conduct either with the intent to kill or with the intent to inflict such serious bodily harm that death would be the likely result.</li>
 </ol>
 {% set substances = [alcohol,drugs] %}
 {% if (alcohol) or (drugs) %}
 <h1>C</h1>
 <h2>VOLUNTARY INTOXICATION</h2>
-<p>You have heard evidence that the defendant acted while intoxicated by{% for substance in substances %} {{ substance }}{% endfor %}. You must now consider {% if sex == "male" %}his{% else %}her{% endif %} mental state at the time of the act that caused the death. Generally, voluntary intoxication is not a defense and does not excuse or justify criminal conduct. However, when charged with an offense requiring a specific intent, the defendant cannot be guilty if {% if sex == "male" %}he{% else %}she{% endif %} was so intoxicated at the time of the act that {% if sex == "male" %}he{% else %}she{% endif %} was unable to form the necessary specific intent. A specific intent is a state of mind in which the defendant intends that {% if sex == "male" %}his{% else %}her{% endif %} act will cause a specific result. In this case, the defendant is charged with [one] [two] [three] specific intent [variety] [varieties] of the murder of {{ dfname | upper }} {{ dlname | upper }}, as follows: [first degree premeditated specific intent to kill murder] [second degree non-premeditated specific intent to kill murder], and [second degree specific intent to inflict serious bodily harm murder].</p>
+<p>You have heard evidence that the defendant acted while intoxicated by{% for substance in substances %} {{ substance }}{% endfor %}. You must now consider {% if sex == "male" %}his{% else %}her{% endif %} mental state at the time of the act that caused the death. Generally, voluntary intoxication is not a defense and does not excuse or justify criminal conduct. However, when charged with an offense requiring a specific intent, the defendant cannot be guilty if {% if sex == "male" %}he{% else %}she{% endif %} was so intoxicated at the time of the act that {% if sex == "male" %}he{% else %}she{% endif %} was unable to form the necessary specific intent. A specific intent is a state of mind in which the defendant intends that {% if sex == "male" %}his{% else %}her{% endif %} act will cause a specific result. In this case, the defendant is charged with [one] [two] [three] specific intent [variety] [varieties] of the murder of {{ vfname | upper }} {{ vlname | upper }}, as follows: [first degree premeditated specific intent to kill murder] [second degree non-premeditated specific intent to kill murder], and [second degree specific intent to inflict serious bodily harm murder].</p>
 <p>If the defendant was so intoxicated, at the time of the act causing the death, that {% if sex == "male" %}he{% else %}she{% endif %} was unable to form the necessary specific intent, then you cannot find the defendant guilty of any specific intent variety of murder. In order to convict the defendant of a specific intent murder, the State must prove, beyond a reasonable doubt, that the degree of the intoxication did not prevent the defendant from forming the specific intent. A person can be [drinking alcoholic beverages] [taking drugs] and can even be intoxicated, but still have the necessary mental ability to form a specific intent.</p>
-<p>If the State proved, beyond a reasonable doubt, that the defendant killed {{ dfname | upper }} {{ dlname | upper }}, and did so with the necessary specific intent, even though intoxicated, then you should find the defendant guilty of specific intent murder. If you find the defendant guilty of specific intent murder, do not address depraved heart murder or involuntary manslaughter. If, on the other hand, in light of the defendant's intoxication, the State did not prove, beyond a reasonable doubt, that the defendant had the necessary specific intent when {% if sex == "male" %}he{% else %}she{% endif %} did the act that caused the death, then you should go on to consider depraved heart murder.</p>
+<p>If the State proved, beyond a reasonable doubt, that the defendant killed {{ vfname | upper }} {{ vlname | upper }}, and did so with the necessary specific intent, even though intoxicated, then you should find the defendant guilty of specific intent murder. If you find the defendant guilty of specific intent murder, do not address depraved heart murder or involuntary manslaughter. If, on the other hand, in light of the defendant's intoxication, the State did not prove, beyond a reasonable doubt, that the defendant had the necessary specific intent when {% if sex == "male" %}he{% else %}she{% endif %} did the act that caused the death, then you should go on to consider depraved heart murder.</p>
 {% endif %}
 <h1>D</h1>
 <h2>DEPRAVED HEART MURDER</h2>
 <p>The defendant also is charged with second degree depraved heart murder. Second degree depraved heart murder is the killing of another person while acting with an extreme disregard for human life. Voluntary intoxication is not a defense to second degree depraved heart murder because that variety of murder does not require a specific intent. In order to convict the defendant of second degree depraved heart murder, the State must prove:</p>
 <ol>
-    <li>that the defendant caused the death of {{ dfname | upper }} {{ dlname | upper }};</li>
-    <li>that the defendant's conduct created a very high degree of risk to the life of {{ dfname | upper }} {{ dlname | upper }}; and</li>
+    <li>that the defendant caused the death of {{ vfname | upper }} {{ vlname | upper }};</li>
+    <li>that the defendant's conduct created a very high degree of risk to the life of {{ vfname | upper }} {{ vlname | upper }}; and</li>
     <li>that the defendant, conscious of such risk, acted with extreme disregard of the life-endangering consequences.<li>
 </ol>
 <p>If the State proved, beyond a reasonable doubt, that the defendant committed second degree depraved heart murder, do not consider involuntary manslaughter. If, on the other hand, the State did not prove, beyond a reasonable doubt, that the defendant committed second degree depraved heart murder, then you should go on to consider involuntary manslaughter.</p>
@@ -42,7 +42,7 @@
 <p>The defendant also is charged with the crime of involuntary manslaughter. Voluntary intoxication is not a defense to involuntary manslaughter because that crime does not require a specific intent. In order to convict the defendant of involuntary manslaughter, the State must prove:</p>
 <ol>
     <li>that the defendant acted in a grossly negligent manner; and</li>
-    <li>that this grossly negligent conduct caused the death of {{ dfname | upper }} {{ dlname | upper }}.</li>
+    <li>that this grossly negligent conduct caused the death of {{ vfname | upper }} {{ vlname | upper }}.</li>
 </ol>
 <p>“Grossly negligent” means that the defendant, while aware of the risk, acted in a manner that created a high degree of risk to, and showed a reckless disregard for, human life.</p>
 <p>[If defendant was unaware of the risk due to self-induced intoxication, that unawareness is not a defense.]</p>
