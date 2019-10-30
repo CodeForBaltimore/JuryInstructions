@@ -1,5 +1,7 @@
 {% set weapons = [bullet,missile,projectile,shotgun] %}
 
+
+
 <h1>FIRST DEGREE ASSULT</h1>
 <h2>MPJI-Cr 4:01.1 FIRST DEGREE ASSAULT</h2>
 <p>The defendant {{ fname }} {{ lname }} is {% if homicide %}[also]{% endif %} charged with the crime of first degree assault.In order to convict the defendant of first degree assault, the State must prove all of the elements of second degree assault and also must prove that:</p>
@@ -26,7 +28,11 @@ by gunpowder or a similar explosive.</p>
 <p>Serious physical injury means injury that</p>
 <ol>
 	<li>creates a substantial risk of death; or,</li>
-	<li>causes serious and permanent or serious and protracted [disfigurement] [loss or impairment of the function of any bodily member or organ].</li>
+	{% if (disfigurement)%}
+			<li>causes serious and permanent or serious and protracted disfigurement.</li>
+	{% elif (impairment)%}
+			<li>causes serious and permanent or serious and protracted loss or impairment of the function of any bodily member or organ.</li>
+	{% endif %}
 </ol>
 {% endif %}
 <h3>Notes on Use</h3>
