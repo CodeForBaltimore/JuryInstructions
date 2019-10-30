@@ -29,27 +29,25 @@ function Export2Docx(element, filename = '') {
     var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
 
     // Specify file name
-    filename = filename ? filename + '-' + getDate() + '.docx' : 'document.docx';
+    filename = filename ? filename + '-' + getDate() + '.docx' : 'document.doc';
 
     // Create download link element
     var downloadLink = document.createElement("a");
 
     document.body.appendChild(downloadLink);
 
-    // if (navigator.msSaveOrOpenBlob) {
-    //     navigator.msSaveOrOpenBlob(blob, filename);
-    // } else {
+    if (navigator.msSaveOrOpenBlob) {
+        navigator.msSaveOrOpenBlob(blob, filename);
+    } else {
         // Create a link to the file
         downloadLink.href = url;
-
-        downloadLink.download
 
         // Setting the file name
         downloadLink.download = filename;
 
         //triggering the function
         downloadLink.click();
-    // }
+    }
 
     document.body.removeChild(downloadLink);
 }
