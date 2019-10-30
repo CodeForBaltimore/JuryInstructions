@@ -19,6 +19,8 @@ function Export2Docx(element, filename = '') {
     var postHtml = "</body></html>";
     var html = preHtml + content + postHtml;
 
+
+
     var blob = new Blob(['\ufeff', html], {
         type: 'application/msword'
     });
@@ -27,25 +29,27 @@ function Export2Docx(element, filename = '') {
     var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
 
     // Specify file name
-    filename = filename ? filename + '-' + getDate + '.docx' : 'document.docx';
+    filename = filename ? filename + '-' + getDate() + '.docx' : 'document.docx';
 
     // Create download link element
     var downloadLink = document.createElement("a");
 
     document.body.appendChild(downloadLink);
 
-    if (navigator.msSaveOrOpenBlob) {
-        navigator.msSaveOrOpenBlob(blob, filename);
-    } else {
+    // if (navigator.msSaveOrOpenBlob) {
+    //     navigator.msSaveOrOpenBlob(blob, filename);
+    // } else {
         // Create a link to the file
         downloadLink.href = url;
+
+        downloadLink.download
 
         // Setting the file name
         downloadLink.download = filename;
 
         //triggering the function
         downloadLink.click();
-    }
+    // }
 
     document.body.removeChild(downloadLink);
 }
@@ -59,7 +63,7 @@ function Export2Pdf(element, filename = '') {
             return true;
         }
     };
-    doc.fromHTML(content, 15, 15, { 
+    doc.fromHTML(content, 15, 15, {
         'width': 170,
         'elementHandlers': specialElementHandlers
     });

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
 <body>
 <form action="/second" method="post" name="InstructionsSelection">
 	<h1>Enter Defendant's details:</h1>
@@ -8,27 +12,27 @@
 		<input type="text" name="fname">
 	</div>
 	<br style=“line-height:2;”>
-	
+
 	<div class="form-group">
 		<label> Last name: <label>
 		<input type="text" name="lname">
 	</div>
 	<br style=“line-height:2;”>
-	
+
 	<div class="form-group">
 		<label> Sex: <label><br>
 		<input type="radio" name="sex" value="male"> Male<br>
 		<input type="radio" name="sex" value="female"> Female
 	</div>
 	<br style=“line-height:2;”>
-	
+
 	<div class="form-group">
 		<label> Date of offense: </label>
 		<input type="date" name="offensedate">
 	</div>
 	<br style=“line-height:2;”>
-  
-  
+
+
   <h1>Type of Instructions:</h1>
 	<div class="form-group">
 		<input type="checkbox" name="homicide" value="true"> Homicide<br>
