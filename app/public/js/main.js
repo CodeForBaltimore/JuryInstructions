@@ -1,3 +1,5 @@
+
+
 if(typeof tinymce !== 'undefined'){
     tinymce.init({
     selector: '#content',
@@ -15,39 +17,35 @@ if(typeof tinymce !== 'undefined'){
 function Export2Doc(element, filename = '') {
     var content = sanitizeContent(tinyMCE.get(element).getContent());
 
-    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:word='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
     var postHtml = "</body></html>";
     var html = preHtml + content + postHtml;
 
-    var blob = new Blob(['\ufeff', html], {
-        type: 'application/octet-stream;charset=utf-8'
-    });
 
-    // Specify link url
+    // creating form:
 
-    // var url = 'data:application/octet-stream;charset=utf-8,' + encodeURIComponent(html);
-    // will use URL object instead 
-    var url = URL.createObjectURL(blob)
+    let formElement = document.createElement("form")
+    formElement.action = "/docx"
+    formElement.method="post"
 
-    // Specify file name
-    filename = filename ? filename + '-' + getDate() : 'document';
+    let filenameInfo = document.createElement("input")
+    filenameInfo.name="filename"
+    filenameInfo.value = filename
 
-    // Create download link element
-    var downloadLink = document.createElement("a");
+    let downloadLink = document.createElement("input");
+    downloadLink.type="submit"
+    downloadLink.name="docx"
+    downloadLink.value= html
+    //append inputs to form then form to document
+    formElement.appendChild(downloadLink);
+    formElement.appendChild(filenameInfo)
 
-    document.body.appendChild(downloadLink);
+    document.body.appendChild(formElement)
 
-    // Create a link to the file
-    downloadLink.href = url;
-
-    // Setting the file name
-    downloadLink.download = `${filename}.doc`
-
-    //triggering the function
+    // hit endpoint
     downloadLink.click();
-
     // remove link from document
-    document.body.removeChild(downloadLink);
+    document.body.removeChild(formElement);
 }
 
 function Export2Pdf(element, filename = '') {
