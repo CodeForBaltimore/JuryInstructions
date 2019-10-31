@@ -12,43 +12,41 @@ if(typeof tinymce !== 'undefined'){
     });
 }
 
-function Export2Docx(element, filename = '') {
+function Export2Doc(element, filename = '') {
     var content = sanitizeContent(tinyMCE.get(element).getContent());
 
     var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
     var postHtml = "</body></html>";
     var html = preHtml + content + postHtml;
 
-
-
     var blob = new Blob(['\ufeff', html], {
-        type: 'application/msword'
+        type: 'application/octet-stream;charset=utf-8'
     });
 
     // Specify link url
-    var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html);
+
+    // var url = 'data:application/octet-stream;charset=utf-8,' + encodeURIComponent(html);
+    // will use URL object instead 
+    var url = URL.createObjectURL(blob)
 
     // Specify file name
-    filename = filename ? filename + '-' + getDate() + '.docx' : 'document.doc';
+    filename = filename ? filename + '-' + getDate() : 'document';
 
     // Create download link element
     var downloadLink = document.createElement("a");
 
     document.body.appendChild(downloadLink);
 
-    if (navigator.msSaveOrOpenBlob) {
-        navigator.msSaveOrOpenBlob(blob, filename);
-    } else {
-        // Create a link to the file
-        downloadLink.href = url;
+    // Create a link to the file
+    downloadLink.href = url;
 
-        // Setting the file name
-        downloadLink.download = filename;
+    // Setting the file name
+    downloadLink.download = `${filename}.doc`
 
-        //triggering the function
-        downloadLink.click();
-    }
+    //triggering the function
+    downloadLink.click();
 
+    // remove link from document
     document.body.removeChild(downloadLink);
 }
 
