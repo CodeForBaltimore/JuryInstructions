@@ -11,6 +11,7 @@ For more information about this project and how we're building it please see the
 ## Setup
 To run this locally the following software is required:
 *  [NodeJs](https://nodejs.org/en/)
+*  [Pandoc](https://pandoc.org/)
 *  [Docker](https://docker.com) *optional*
 
 If on a Mac you can install Node and npm via Homebrew with `brew install node`
@@ -19,6 +20,11 @@ If on a Mac you can install Node and npm via Homebrew with `brew install node`
 To run this application on your local machine you first need to install dependencies.  From the project root, run the following command:
 ```shell
 npm install
+```
+
+Once that is finished you must install _Pandoc_ on your local machine. Run this command on a Mac:
+```shell
+brew intall pandoc
 ```
 
 Once that completes you can run the application by running the following from the project root:
