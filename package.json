@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "codecov": "^3.6.1",
     "express": "^4.17.1",
     "jest": "^24.9.0",
     "jest-sonar-reporter": "^2.0.0",
@@ -21,7 +22,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest",
+    "test": "jest && codecov",
     "start": "nodemon --inspect=127.0.0.1:4000 app/server.js"
   },
   "jest": {
