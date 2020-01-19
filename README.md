@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.com/CodeForBaltimore/JuryInstructions.svg?branch=master)](https://travis-ci.com/CodeForBaltimore/JuryInstructions)
-[![codecov](https://codecov.io/gh/CodeForBaltimore/JuryInstructions/branch/master/graph/badge.svg)](https://codecov.io/gh/CodeForBaltimore/JuryInstructions)
+[![codecov](https://codecov.io/gh/CodeForBaltimore/JuryInstructions/branch/master/graph/badge.svg)](https://codecov.io/gh/CodeForBaltimore/JuryInstructions) [![Greenkeeper badge](https://badges.greenkeeper.io/CodeForBaltimore/JuryInstructions.svg)](https://greenkeeper.io/)
 # Jury Instructions
 This is a project to assist judges/practitioners fill out criminal pattern jury instructions.
 
