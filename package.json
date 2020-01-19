@@ -14,7 +14,7 @@
     "jest": "^24.9.0",
     "jest-sonar-reporter": "^2.0.0",
     "node-pandoc": "^0.3.0",
-    "nodemon": "^1.19.3",
+    "nodemon": "^2.0.2",
     "nunjucks": "^3.2.0",
     "path": "^0.12.7",
     "superagent": "^5.1.0",
